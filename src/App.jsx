@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Category from './pages/Category';
 import Article from './pages/Article';
 import Edit from './pages/Edit';
+import Search from './pages/Search';
 import Notfound from './pages/Notfound';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path="/category/:name" element={<Category />} />
       <Route path='/article/:id' element={<Article/>} />
       <Route path='/edit/:id' element={<Edit/>} />
+      <Route path='/search' element={<Search/>} />
       <Route path='*' element={<Notfound/>} />
     </Routes>
     </>
