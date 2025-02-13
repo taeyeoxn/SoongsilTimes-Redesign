@@ -1,0 +1,7 @@
+.Button {
+    background-color: var(--gray01);
+    width: 145px;
+    height: 43px;
+    border-radius: 10px;
+    font: var(--pretendard-bold-18px);
+}
