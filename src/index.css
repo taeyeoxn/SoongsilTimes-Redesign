@@ -52,3 +52,19 @@ table {
 body {
 	font-family: "Pretendard", "Times New Roman", Times, serif;
 }
+
+:root {
+    --red01: #E9221F;
+    --red02: #A51D1D;
+    --gray01: #D9D9D9;
+    --gray02: #989898;
+    --gray03: #616161;
+    --white: #FFFFFF;
+    --black: #000000;
+
+    --times-bold-35px: 700 35px/40px 'Times New Roman', sans-serif;
+    --times-bold-25px: 700 25px/28px 'Times New Roman', sans-serif;
+    --times-bold-20px: 700 20px/23px 'Times New Roman', sans-serif;
+    --times-regular-25px: 400 25px/28px 'Times New Roman', sans-serif;
+    --pretendard-bold-18px: 700 18px/20px 'Pretendard', sans-serif;
+}
