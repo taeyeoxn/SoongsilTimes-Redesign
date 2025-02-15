@@ -38,12 +38,13 @@
 }
 
 .nav {
-    margin-left: 48px;
     display: flex;
     font: var(--times-bold-15px);
     cursor: pointer;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
+    padding: 0 24px;
 }
 
 .nav-link {
@@ -55,7 +56,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-left: 400px;
+    margin-left: auto;
 }
 
 .nav input {
@@ -68,8 +69,7 @@
 }
 
 .nav button {
-    margin-left: auto;
-    margin-right: 48px;
+    margin-left: 24px;
     width: 100px;
     height: 27px;
     background-color: #166DFC;
