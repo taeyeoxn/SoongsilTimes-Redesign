@@ -1,0 +1,80 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.logo {
+    color: var(--red01);
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.logo-sub {
+    color: var(--gray02);
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 15px;
+}
+
+.nav-wrapper {
+    width: 100%;
+    height: 40px;
+    margin-top: 66px;
+    border-top: 2px solid var(--gray01);
+    border-bottom: 2px solid var(--gray01);
+
+    display: flex; 
+    align-items: center;
+}
+
+.nav {
+    margin-left: 48px;
+    display: flex;
+    font: var(--times-bold-15px);
+    cursor: pointer;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    gap: 44px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 400px;
+}
+
+.nav input {
+    border: none;
+    border-bottom: 1.5px solid var(--black);
+}
+
+.nav input::placeholder {
+    font: var(--pretendard-15px);
+}
+
+.nav button {
+    margin-left: auto;
+    margin-right: 48px;
+    width: 100px;
+    height: 27px;
+    background-color: #166DFC;
+    border-radius: 15px;
+
+    color: var(--white);
+    font: var(--pretendard-15px);
+}

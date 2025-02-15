@@ -1,9 +1,9 @@
-import Button from '../components/Button';
+import Header from '../components/Header';
 
 const Home = () => {
     return (
         <div>
-            <Button text={"기사 작성하기"}/>
+            <Header/>
         </div>
     );
 };
