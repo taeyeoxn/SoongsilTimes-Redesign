@@ -50,6 +50,17 @@
 .nav-link {
     display: flex;
     gap: 44px;
+    padding-top: 6px;
+}
+
+.nav-link div {
+    position: relative;
+}
+
+.selected {
+    background-color: var(--red01);
+    height: 3px;
+    bottom: -6px;
 }
 
 .search-container {
