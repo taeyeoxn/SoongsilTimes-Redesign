@@ -1,5 +1,5 @@
 import './App.css';
-import { useReducer, useRef } from 'react';
+import { useReducer, useRef, createContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Category from './pages/Category';
@@ -40,6 +40,9 @@ function reducer(state, action) {
   }
 }
 
+const ArticleStateContext = createContext();
+const ArticleDispatchContext = createContext();
+
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
@@ -79,20 +82,29 @@ function App() {
   }
 
   return (
-    <div className='App'>
-      <Header/>
-      <div className='content'>
-        <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path="/category/:name" element={<Category />} />
-        <Route path='/article/:id' element={<Article/>} />
-        <Route path='/edit/:id' element={<Edit/>} />
-        <Route path='/search' element={<Search/>} />
-        <Route path='*' element={<Notfound/>} />
-      </Routes>
-      </div>
-      <Footer/>
-    </div>
+    <ArticleStateContext.Provider value={data}>
+      <ArticleDispatchContext.Provider
+        value={{
+          onCreate,
+          onUpdate,
+          onDelete,
+        }}>
+        <div className='App'>
+        <Header/>
+        <div className='content'>
+          <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path="/category/:name" element={<Category />} />
+          <Route path='/article/:id' element={<Article/>} />
+          <Route path='/edit/:id' element={<Edit/>} />
+          <Route path='/search' element={<Search/>} />
+          <Route path='*' element={<Notfound/>} />
+        </Routes>
+        </div>
+        <Footer/>
+        </div>
+      </ArticleDispatchContext.Provider>
+    </ArticleStateContext.Provider>
   )
 }
 
