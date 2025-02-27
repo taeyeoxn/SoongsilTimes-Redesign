@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import Notfound from './Notfound';
+import CategoryInfo from '../components/CategoryInfo';
 
 const Category = () => {
     const {name} = useParams();
@@ -10,7 +11,9 @@ const Category = () => {
     }
 
     return (
-        <div>{name} 카테고리 페이지입니다</div>
+        <div>
+            <CategoryInfo category={name}/>
+        </div>
     );
 };
 
