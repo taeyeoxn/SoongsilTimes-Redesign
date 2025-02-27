@@ -15,12 +15,16 @@ const mockData = [
     id: 1,
     createdDate: new Date().getTime(),
     category: "CAMPUS",
+    title: "1번 기사",
+    reporter: "짱구",
     content: "1번 기사 내용",
   },
   {
     id: 2,
     createdDate: new Date().getTime(),
     category: "SOCIETY",
+    title: "2번 기사",
+    reporter: "짱아",
     content: "2번 기사 내용",
   },
 ]
@@ -40,34 +44,38 @@ function reducer(state, action) {
   }
 }
 
-const ArticleStateContext = createContext();
-const ArticleDispatchContext = createContext();
+export const ArticleStateContext = createContext();
+export const ArticleDispatchContext = createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
   // 새로운 기사 추가
-  const onCreate = (createdDate, category, content) => {
+  const onCreate = (createdDate, category, title, reporter, content) => {
     dispatch ({
       type: "CREATE",
       data: {
         id: idRef.current++,
         createdDate,
         category,
+        title,
+        reporter,
         content,
       }
     });
   }
 
   // 기존 기사 수정
-  const onUpdate = (id, createdDate, category, content) => {
+  const onUpdate = (id, createdDate, category, title, reporter, content) => {
     dispatch ({
       type: "UPDATE",
       data: {
         id,
         createdDate,
         category,
+        title,
+        reporter,
         content,
       }
     });
