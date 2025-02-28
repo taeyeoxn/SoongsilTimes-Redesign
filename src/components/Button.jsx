@@ -2,9 +2,11 @@ import './Button.css';
 
 const Button = ({text, onClick}) => {
     return (
-        <button onClick={onClick} className='Button'>
+        <div className='Button-container'>
+            <button onClick={onClick} className='Button'>
             {text}
-        </button>
+            </button>
+        </div>
     );
 };
 
