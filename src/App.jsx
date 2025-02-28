@@ -15,9 +15,9 @@ const mockData = [
     id: 1,
     createdDate: new Date().getTime(),
     category: "CAMPUS",
-    title: "1번 기사",
-    reporter: "짱구",
-    content: "1번 기사 내용",
+    title: "Facing the Climate Crisis: Climateflation",
+    reporter: "Yoo Tae-yeon",
+    content: "Are Soongsilians interested in fashion? ST interviewed Soongsilians who wear clothes that express their individuality to other Soongsilians on campus. Get recommendations through...",
   },
   {
     id: 2,

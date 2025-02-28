@@ -1,0 +1,34 @@
+.ArticleList {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center; 
+    margin-top: 20px
+}
+
+.picture {
+    width: 320px;
+    height: 200px;
+}
+
+.Articlewrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: var(--black);
+    font: var(--times-bold-25px);
+    margin-bottom: 5px;
+}
+
+.reporter {
+    color: var(--gray03);
+    font: var(--times-bold-20px);
+    margin-bottom: 15px;
+}
+
+.articlecontent {
+    color: var(--black);
+    font: var(--times-regular-20px)
+}

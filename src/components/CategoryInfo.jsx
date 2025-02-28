@@ -1,46 +1,48 @@
+import './CategoryInfo.css';
+
 const CategoryInfo = ({category}) => {
     const CategoryContent = () => {
         switch(category) {
             case "campus":
                 return (
-                    <div>
+                    <div className='CategoryInfo'>
                         <h2>Campus</h2>
-                        <p>campus</p>
+                        <p>News on student life<br />and campus events.</p>
                     </div>
                 );
             case "society":
                 return (
-                    <div>
+                    <div className='CategoryInfo'>
                         <h2>Society</h2>
-                        <p>society</p>
+                        <p>Coverage of social issues, policies,<br/>and community matters.</p>
                     </div>
                 );
             case "business":
                 return (
-                    <div>
+                    <div className='CategoryInfo'>
                         <h2>Business</h2>
-                        <p>business</p>
+                        <p>Insights into markets, finance,<br/>and corporate trends.</p>
                     </div>
                 );
             case "culture":
             return (
-                <div>
+                <div className='CategoryInfo'>
                     <h2>Culture</h2>
-                    <p>culture</p>
+                    <p>Stories on arts, entertainment,<br/>and the world of sports.</p>
                 </div>
             );
             case "science":
                 return (
-                    <div>
+                    <div className='CategoryInfo'>
                         <h2>Science</h2>
-                        <p>science</p>
+                        <p>Exploring discoveries and<br/>innovations in science and math.</p>
                     </div>
                 );
-            case "archieve":
+            case "archive":
                 return (
-                    <div>
-                        <h2>Archieve</h2>
-                        <p>archieve</p>
+                    <div className='CategoryInfo'>
+                        <h2>Archive</h2>
+                        <p>A collection of past issues</p>
                     </div>
                 );
         };
