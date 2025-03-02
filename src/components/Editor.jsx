@@ -19,9 +19,10 @@ const getStringedDate = (targetDate) => {
     return `${year}-${month}-${date}`;
 };
 
-const Editor = ({onSubmit}) => {
+const Editor = ({onSubmit, categoryData}) => {
     const [input, setInput] = useState({
         createdDate: new Date(),
+        category: categoryData?.category || "",
         title: "",
         reporter: "",
         content: "",

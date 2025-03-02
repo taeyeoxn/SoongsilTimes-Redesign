@@ -15,7 +15,7 @@ const mockData = [
   {
     id: 1,
     createdDate: new Date().getTime(),
-    category: "CAMPUS",
+    category: "campus",
     title: "Facing the Climate Crisis: Climateflation",
     reporter: "Yoo Tae-yeon",
     content: "Are Soongsilians interested in fashion? ST interviewed Soongsilians who wear clothes that express their individuality to other Soongsilians on campus. Get recommendations through...",
@@ -23,7 +23,7 @@ const mockData = [
   {
     id: 2,
     createdDate: new Date().getTime(),
-    category: "SOCIETY",
+    category: "society",
     title: "2번 기사",
     reporter: "짱아",
     content: "2번 기사 내용",
@@ -105,7 +105,7 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path="/category/:name" element={<Category />} />
           <Route path='/article/:id' element={<Article/>} />
-          <Route path='/new' element={<New/>} />
+          <Route path='/new/:category' element={<New/>} />
           <Route path='/edit/:id' element={<Edit/>} />
           <Route path='/search' element={<Search/>} />
           <Route path='*' element={<Notfound/>} />
