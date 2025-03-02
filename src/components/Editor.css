@@ -27,6 +27,7 @@
     border: none;
     border-bottom: 1.5px solid var(--black);
     height: 20px;
+    max-width: 200px;
 
     color: var(--gray03);
     font: var(--times-bold-20px);
