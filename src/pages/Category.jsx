@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ArticleStateContext } from '../App';
-import { replace, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Notfound from './Notfound';
 import CategoryInfo from '../components/CategoryInfo';
 import ArticleList from '../components/ArticleList';
