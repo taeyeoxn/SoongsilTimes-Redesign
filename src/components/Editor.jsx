@@ -1,4 +1,5 @@
 import './Editor.css';
+import Button from '../components/Button';
 import attachIcon from '../assets/attach.svg'
 import { useState } from 'react';
 
@@ -18,7 +19,7 @@ const getStringedDate = (targetDate) => {
     return `${year}-${month}-${date}`;
 };
 
-const Editor = () => {
+const Editor = ({onSubmit}) => {
     const [input, setInput] = useState({
         createdDate: new Date(),
         title: "",
@@ -38,6 +39,10 @@ const Editor = () => {
             ...input,
             [name]: value,
         });
+    };
+
+    const onClickSubmitButton = () => {
+        onSubmit(input);
     };
     
     return (
@@ -75,6 +80,9 @@ const Editor = () => {
                 onChange={onChangeInput}
                 placeholder='Enter the Article... '/>
             </div>
+            <Button 
+            onClick={onClickSubmitButton}
+            text={"기사 올리기"}/>
         </div>
     )
 };
