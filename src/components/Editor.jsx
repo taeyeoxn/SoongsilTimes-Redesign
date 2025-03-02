@@ -43,10 +43,20 @@ const Editor = () => {
     return (
         <div>
             <div className='title-input'>
-                <input placeholder='Enter the Title...'/>
+                <input 
+                placeholder='Enter the Title...'
+                name='title'
+                value={input.title}
+                onChange={onChangeInput}
+                />
             </div>
             <div className='sub-input'>
-                <input placeholder='Enter the Author...'/>
+                <input 
+                placeholder='Enter the Reporter...'
+                name='reporter'
+                value={input.reporter}
+                onChange={onChangeInput}
+                />
                 <div className='sub-input-bar'></div>
                 <input 
                 name='createdDate'
@@ -59,7 +69,11 @@ const Editor = () => {
                     <input type = "file" accept = "image/*"/>
                     <img src={attachIcon} alt="attach icon"/>
                 </div>
-                <textarea placeholder='Enter the Article... '/>
+                <textarea 
+                name='content'
+                value={input.content}
+                onChange={onChangeInput}
+                placeholder='Enter the Article... '/>
             </div>
         </div>
     )
