@@ -1,6 +1,6 @@
 import './Editor.css';
 import Button from '../components/Button';
-import attachIcon from '../assets/attach.svg'
+import attachIcon from '../assets/attach.svg';
 import { useState } from 'react';
 
 // createdDate 프로퍼티에 저장된 Date 객체를 문자열로 변환
@@ -23,10 +23,13 @@ const Editor = ({onSubmit, categoryData}) => {
     const [input, setInput] = useState({
         createdDate: new Date(),
         category: categoryData?.category || "",
+        image: null,
         title: "",
         reporter: "",
         content: "",
     });
+
+    const [imagePreview, setImagePreview] = useState(null);  // 미리보기 상태 추가
 
     const onChangeInput = (e) => {
         let name = e.target.name;
@@ -40,6 +43,21 @@ const Editor = ({onSubmit, categoryData}) => {
             ...input,
             [name]: value,
         });
+    };
+
+    const onImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImagePreview(reader.result); // 미리보기 상태 업데이트
+            };
+            reader.readAsDataURL(file); // Base64로 읽기
+            setInput({
+                ...input,
+                image: file, // 선택된 파일을 상태에 저장
+            });
+        }
     };
 
     const onClickSubmitButton = () => {
@@ -71,9 +89,17 @@ const Editor = ({onSubmit, categoryData}) => {
                 type='date'/>
             </div>
             <div className='content-input'>
-                <div className='article-image'>
-                    <input type = "file" accept = "image/*"/>
-                    <img src={attachIcon} alt="attach icon"/>
+                <div className="article-image">
+                    <input 
+                        type="file" 
+                        accept="image/*"
+                        onChange={onImageChange}
+                    />
+                    {imagePreview ? (
+                        <img src={imagePreview} alt="preview" className="image-preview" />
+                    ) : (
+                        <img src={attachIcon} alt="attach icon" />
+                    )}
                 </div>
                 <textarea 
                 name='content'
