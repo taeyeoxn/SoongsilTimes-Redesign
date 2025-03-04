@@ -13,6 +13,7 @@ const New = () => {
         onCreate(
             input.createdDate.getTime(), 
             category,
+            input.image,
             input.title, 
             input.reporter, 
             input.content,
