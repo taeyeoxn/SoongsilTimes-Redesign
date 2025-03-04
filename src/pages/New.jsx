@@ -17,6 +17,7 @@ const New = () => {
             input.reporter, 
             input.content,
         );
+        alert("기사가 등록되었습니다");
         nav(`/category/${category}`, { replace: true });
     };
 
