@@ -16,6 +16,7 @@ const mockData = [
     id: 1,
     createdDate: new Date().getTime(),
     category: "campus",
+    image: null,
     title: "Facing the Climate Crisis: Climateflation",
     reporter: "Yoo Tae-yeon",
     content: "Are Soongsilians interested in fashion? ST interviewed Soongsilians who wear clothes that express their individuality to other Soongsilians on campus. Get recommendations through...",
@@ -24,6 +25,7 @@ const mockData = [
     id: 2,
     createdDate: new Date().getTime(),
     category: "society",
+    image: null,
     title: "2번 기사",
     reporter: "짱아",
     content: "2번 기사 내용",
@@ -53,13 +55,14 @@ function App() {
   const idRef = useRef(3);
 
   // 새로운 기사 추가
-  const onCreate = (createdDate, category, title, reporter, content) => {
+  const onCreate = (createdDate, category, image, title, reporter, content) => {
     dispatch ({
       type: "CREATE",
       data: {
         id: idRef.current++,
         createdDate,
         category,
+        image,
         title,
         reporter,
         content,
@@ -68,13 +71,14 @@ function App() {
   }
 
   // 기존 기사 수정
-  const onUpdate = (id, createdDate, category, title, reporter, content) => {
+  const onUpdate = (id, createdDate, category, image, title, reporter, content) => {
     dispatch ({
       type: "UPDATE",
       data: {
         id,
         createdDate,
         category,
+        image,
         title,
         reporter,
         content,

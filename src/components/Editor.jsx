@@ -50,16 +50,16 @@ const Editor = ({onSubmit, categoryData}) => {
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                setImagePreview(reader.result); // 미리보기 상태 업데이트
+                setImagePreview(reader.result); // Base64 문자열로 변환된 이미지를 미리보기 상태에 저장
+                setInput({
+                    ...input,
+                    image: reader.result, // Base64로 변환된 문자열로 저장
+                });
             };
-            reader.readAsDataURL(file); // Base64로 읽기
-            setInput({
-                ...input,
-                image: file, // 선택된 파일을 상태에 저장
-            });
+            reader.readAsDataURL(file); // Base64로 변환
         }
     };
-
+    
     const onClickSubmitButton = () => {
         onSubmit(input);
     };
