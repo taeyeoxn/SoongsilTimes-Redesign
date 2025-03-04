@@ -51,7 +51,7 @@
 .article-image {
     position: relative;
     width: 100%;
-    min-height: 580px;
+    height: 580px;
     display: flex;
     justify-content: center;
     align-items: center;
