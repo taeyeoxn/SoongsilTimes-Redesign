@@ -1,10 +1,13 @@
 import { useParams, useSearchParams } from 'react-router-dom';
+import Editor from '../components/Editor';
 
 const Edit = () => {
     const params = useParams();
 
     return (
-        <div>{params.id}번 기사 수정페이지입니다</div>
+        <div>
+            <Editor/>
+        </div>
     );
 };
 
