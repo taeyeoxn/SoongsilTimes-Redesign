@@ -20,6 +20,8 @@ const useArticle = (id) => {
 
     setCurArticleItem(currentArticleItem);
     }, [id, data]);
+
+    return curArticleItem;
 };
 
 export default useArticle;

@@ -3,11 +3,14 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { ArticleStateContext, ArticleDispatchContext } from '../App';
 import { useContext, useEffect, useState } from 'react';
+import useArticle from '../hooks/useArticle';
 
 const Edit = () => {
     const params = useParams();
     const nav = useNavigate();
     const {onUpdate} = useContext(ArticleDispatchContext);
+
+    const curArticleItem = useArticle(params.id);
 
         const onSubmit = (input) => {
             if (
