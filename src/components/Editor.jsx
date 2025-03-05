@@ -1,7 +1,7 @@
 import './Editor.css';
 import Button from '../components/Button';
 import attachIcon from '../assets/attach.svg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // createdDate 프로퍼티에 저장된 Date 객체를 문자열로 변환
 const getStringedDate = (targetDate) => {
@@ -19,7 +19,7 @@ const getStringedDate = (targetDate) => {
     return `${year}-${month}-${date}`;
 };
 
-const Editor = ({onSubmit, categoryData}) => {
+const Editor = ({onSubmit, categoryData, initData}) => {
     const [input, setInput] = useState({
         createdDate: new Date(),
         category: categoryData?.category || "",
@@ -28,6 +28,15 @@ const Editor = ({onSubmit, categoryData}) => {
         reporter: "",
         content: "",
     });
+
+    useEffect(() => {
+        if(initData) {
+            setInput({
+                ...initData,
+                createdDate : new Date(Number(initData.createdDate)),
+            });
+        }
+    }, [initData]);
 
     const [imagePreview, setImagePreview] = useState(null);  // 미리보기 상태 추가
 
