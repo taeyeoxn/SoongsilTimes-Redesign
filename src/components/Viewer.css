@@ -28,7 +28,7 @@
     font: var(--times-bold-20px);
 }
 
-.article-image1 {
+.articleImage {
     height: 580px;
     display: flex;
     justify-content: center;
