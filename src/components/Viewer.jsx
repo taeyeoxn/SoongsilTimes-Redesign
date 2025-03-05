@@ -14,7 +14,7 @@ const Viewer = ({createdDate, image, title, reporter, content}) => {
                 <div className='article-date'>{ArticleDate}</div> 
             </div>
 
-            <div className='article-image'>
+            <div className='article-image1'>
             {image ? (
                     <img src={image} alt="Article Image" />
                 ) : (

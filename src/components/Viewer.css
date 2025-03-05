@@ -28,6 +28,14 @@
     font: var(--times-bold-20px);
 }
 
+.article-image1 {
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
 .article-content {
     color: var(--black);
     font: var(--times-regular-20px);
