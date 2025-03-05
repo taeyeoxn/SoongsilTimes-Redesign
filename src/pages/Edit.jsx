@@ -30,13 +30,13 @@ const Edit = () => {
                     onUpdate(
                         params.id, 
                         input.createdDate.getTime(), 
-                        input.category, 
+                        curArticleItem.category, 
                         input.image, 
                         input.title, 
                         input.reporter, 
                         input.content
                     );
-                    nav(`/category/${input.category}`, {replace:true});
+                    nav(`/category/${curArticleItem.category}`, {replace:true});
                 };
             };
 
