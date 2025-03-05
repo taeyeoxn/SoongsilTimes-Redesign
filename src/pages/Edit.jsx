@@ -1,13 +1,14 @@
 import Editor from '../components/Editor';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { ArticleStateContext } from '../App';
+import { ArticleStateContext, ArticleDispatchContext } from '../App';
 import { useContext, useEffect, useState } from 'react';
 
 const Edit = () => {
     const params = useParams();
     const nav = useNavigate();
     const data = useContext(ArticleStateContext);
+    const {onUpdate} = useContext(ArticleDispatchContext);
     const [curArticleItem, setCurArticleItem] = useState();
 
     useEffect(() => {
@@ -23,9 +24,25 @@ const Edit = () => {
         setCurArticleItem(currentArticleItem);
         }, [params.id, data]);
 
+        const onSubmit = (input) => {
+            if (
+                window.confirm("기사를 정말 수정할까요?")) {
+                    onUpdate(
+                        params.id, 
+                        input.createdDate.getTime(), 
+                        input.category, 
+                        input.image, 
+                        input.title, 
+                        input.reporter, 
+                        input.content
+                    );
+                    nav(`/category/${input.category}`, {replace:true});
+                };
+            };
+
     return (
         <div>
-            <Editor initData={curArticleItem}/>
+            <Editor initData={curArticleItem} onSubmit={onSubmit}/>
         </div>
     );
 };
