@@ -1,0 +1,36 @@
+.article-title {
+    height: 30px;
+    margin-top: 70px;
+    color: var(--black);
+    font: var(--times-bold-30px);
+}
+
+.sub {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.article-reporter {
+    color: var(--gray03);
+    font: var(--times-bold-20px);
+}
+
+.sub-bar {
+    width: 2px;
+    height: 20px;
+    background-color: var(--gray03);
+}
+
+.article-date {
+    color: var(--gray03);
+    font: var(--times-bold-20px);
+}
+
+.article-content {
+    color: var(--black);
+    font: var(--times-regular-20px);
+    margin-top: 30px;
+    margin-bottom: 20px; 
+}
