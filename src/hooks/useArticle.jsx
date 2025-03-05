@@ -19,7 +19,7 @@ const useArticle = (id) => {
     }
 
     setCurArticleItem(currentArticleItem);
-    }, [id, data]);
+    }, [id]);
 
     return curArticleItem;
 };
