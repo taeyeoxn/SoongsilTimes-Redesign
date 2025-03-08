@@ -1,6 +1,11 @@
+import SearchResult from '../components/SearchResult';
+
 const Search = () => {
+
     return (
-        <div>Search</div>
+        <div>
+            <SearchResult/>
+        </div>
     );
 };
 

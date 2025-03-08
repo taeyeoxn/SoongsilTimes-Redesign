@@ -6,6 +6,23 @@ import { useState } from 'react';
 const Header = () => {
     const navigate = useNavigate();
     const [navState, setNavState] = useState("HOME");
+    const [search, setSearch] = useState("");
+
+    const onChangeSearch = (e) => {
+        setSearch(e.target.value);
+    };
+
+    const handleSearchClick = () => {
+        if (search.trim()) {
+            navigate(`/search?query=${encodeURIComponent(search)}`);
+        }
+    };
+
+    const activeEnter = (e) => {
+        if(e.key === "Enter") {
+          handleSearchClick();
+        }
+      }
 
     const handleNavClick = (category) => {
     setNavState(category);
@@ -37,11 +54,19 @@ const Header = () => {
                     </div>
 
                     <div className='search-container'>
-                        <img src={searchIcon} alt="searh icon"/>
-                        <input placeholder='Search Articles..'/>
+                        <img 
+                        onClick={handleSearchClick}
+                        src={searchIcon} 
+                        alt="searh icon"/>
+                        <input
+                        value={search}
+                        onChange={onChangeSearch} 
+                        onKeyDown={(e) => activeEnter(e)}
+                        placeholder='Search Articles..'/>
                     </div>
                     <button>Subscribe</button>
                 </div>
+
             </div>
         </div>
     );

@@ -1,0 +1,6 @@
+.SearchResult h2, p {
+    color: var(--red01);
+    font-family: "Times New Roman";
+    font-size: 40px;
+    font-weight: 700;
+}
