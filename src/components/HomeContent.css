@@ -1,0 +1,131 @@
+.cover {
+    display: flex;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.cover-title {
+    width: 304px;
+    height: 316px;
+    background-color: var(--red02);
+    margin-right: -70px;
+    z-index: 1;
+}
+
+.cover-image {
+    width: 842px;
+    height: 492px;
+    background-color: var(--gray01);
+}
+
+.section {
+    margin-top: 110px;
+}
+
+.section-header {
+    display: flex;
+}
+
+.section-header p {
+    font: var(--times-bold-35px);
+}
+
+.section-divider {
+    flex: 1;
+    height: 2px;
+    background-color: var(--red01);
+    margin-top: auto;
+}
+
+.pick-list {
+    margin-top: 70px;
+    display: flex;
+    gap: 58px;
+}
+
+.pick-card {
+    width: 320px;
+    height: 200px;
+    background-color: var(--gray01);
+}
+
+.column-list {
+    margin-top: 70px;
+    display: flex;
+    gap: 30px;
+    text-align: center;
+}
+
+.column-card h2 {
+    font: var(--times-bold-25px);
+}
+
+.reporter {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.reporter-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--gray01);
+}
+
+.reporter h4 {
+    color: #616161;
+    font: var(--times-bold-20px);
+    font-style: italic;
+    margin-top: auto;
+}
+
+.column-separator {
+    width: 1.5px;
+    background-color: var(--gray01);
+}
+
+.photo-list {
+    display: flex;
+    gap: 45px;
+    margin-top: 70px;
+    margin-bottom: 120px;
+}
+
+.photo-column1 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.photo-item-large {
+    width: 335px;
+    height: 280px;
+    background-color: var(--gray01);
+}
+
+.photo-item-medium {
+    width: 335px;
+    height: 381px;
+    background-color: var(--gray01);
+}
+
+.photo-row {
+    display: flex;
+    flex-direction: row;
+    gap: 27px;
+    margin-top: 33.45px;
+}
+
+.photo-item-main {
+    width: 697.406px;
+    height: 407.547px;
+    background-color: var(--gray01);
+}
+
+.photo-item-small {
+    width: 335px;
+    height: 250px;
+    background-color: var(--gray01);
+}
