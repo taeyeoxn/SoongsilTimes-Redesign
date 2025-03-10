@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const Header = () => {
-    const navigate = useNavigate();
+    const nav = useNavigate();
     const [navState, setNavState] = useState("HOME");
     const [search, setSearch] = useState("");
 
@@ -14,7 +14,7 @@ const Header = () => {
 
     const handleSearchClick = () => {
         if (search.trim()) {
-            navigate(`/search?query=${encodeURIComponent(search)}`);
+            nav(`/search?query=${encodeURIComponent(search)}`);
         }
     };
 
@@ -27,9 +27,9 @@ const Header = () => {
     const handleNavClick = (category) => {
     setNavState(category);
     if (category === "HOME") {
-        navigate("/")
+        nav("/")
     } else {
-        navigate(`/category/${category.toLowerCase()}`);
+        nav(`/category/${category.toLowerCase()}`);
     }};
 
     const categories = ["HOME", "CAMPUS", "SOCIETY", "BUSINESS", "SCIENCE", "CULTURE", "ARCHIVE"];
@@ -38,7 +38,7 @@ const Header = () => {
         <div>
             <div className='header'>
                 <div 
-                onClick={() => navigate('/')}
+                onClick={() => nav('/')}
                 className='logo'>
                     The Soongsil Times</div>
                 <p className='logo-sub'>since 1981</p>
