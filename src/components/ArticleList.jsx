@@ -8,6 +8,9 @@ const ArticleList = ({ id, category, image, title, reporter, content }) => {
         nav(`/article/${id}`);
     }
 
+    const maxLength = 200;
+    const displayedContent = content.length > maxLength ? content.substring(0, maxLength) + "..." : content;
+
     return (
         <div className='ArticleList'
         onClick={onClick}>
@@ -21,7 +24,7 @@ const ArticleList = ({ id, category, image, title, reporter, content }) => {
             <div className='Articlewrapper'>
                 <div className='title'>{title}</div>
                 <div className='reporter'>By {reporter}</div>
-                <div className='articlecontent'>{content}</div>
+                <div className='articlecontent'>{displayedContent}</div>
             </div>
 
         </div>
