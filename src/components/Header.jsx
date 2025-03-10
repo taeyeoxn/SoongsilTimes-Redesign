@@ -37,7 +37,10 @@ const Header = () => {
     return (
         <div>
             <div className='header'>
-                <div className='logo'>The Soongsil Times</div>
+                <div 
+                onClick={() => navigate('/')}
+                className='logo'>
+                    The Soongsil Times</div>
                 <p className='logo-sub'>since 1981</p>
             </div>
             <div className='nav-wrapper'>
