@@ -12,6 +12,20 @@
     z-index: 1;
 }
 
+.cover-title p {
+    font: var(--times-bold-30px);
+    color: var(--white);
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.cover-title h4 {
+    font: var(--times-bold-25px);
+    color: var(--white);
+    margin-top: 80px;
+    padding-left: 20px;
+}
+
 .cover-image {
     width: 842px;
     height: 492px;
@@ -38,16 +52,50 @@
 }
 
 .pick-list {
-    margin-top: 70px;
+    margin-top: -30px;
     display: flex;
     gap: 58px;
 }
 
 .pick-card {
-    width: 320px;
-    height: 200px;
-    background-color: var(--gray01);
+    position: relative;
 }
+
+.pick-card p {
+    font: var(--times-bold-20px);
+    color: var(--white);
+    position: absolute;
+    bottom: 0; 
+    right: 0;
+    margin-bottom: 2.5px; 
+    padding: 5px 10px;
+    background-color: var(--red02); 
+}
+
+.pick-number {
+    margin-top: 50px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+  
+.pick-number h2 {
+    color: var(--gray03);
+    font-family: "Times New Roman";
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+}
+  
+.pick-number h2:nth-child(1) {
+    margin-right: 357px;
+}
+  
+.pick-number h2:nth-child(2) {
+    margin-right: 362px;
+}
+
 
 .column-list {
     margin-top: 70px;
@@ -86,46 +134,31 @@
     background-color: var(--gray01);
 }
 
-.photo-list {
-    display: flex;
-    gap: 45px;
+.photo-grid {
+    display: grid;
+    grid-template-areas:
+      "img1 img2"
+      "main main"
+      "img3 img4";
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
     margin-top: 70px;
     margin-bottom: 120px;
 }
-
-.photo-column1 {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  
+  .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-
-.photo-item-large {
-    width: 335px;
+  
+  .photo-item.large {
+    grid-area: main;
+    height: 420px;
+}
+  
+  .photo-item.small {
     height: 280px;
-    background-color: var(--gray01);
-}
-
-.photo-item-medium {
-    width: 335px;
-    height: 381px;
-    background-color: var(--gray01);
-}
-
-.photo-row {
-    display: flex;
-    flex-direction: row;
-    gap: 27px;
-    margin-top: 33.45px;
-}
-
-.photo-item-main {
-    width: 697.406px;
-    height: 407.547px;
-    background-color: var(--gray01);
-}
-
-.photo-item-small {
-    width: 335px;
-    height: 250px;
-    background-color: var(--gray01);
 }
