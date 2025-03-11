@@ -1,33 +1,59 @@
 import { useContext } from 'react';
 import { ArticleStateContext } from '../App';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Notfound from './Notfound';
 import CategoryInfo from '../components/CategoryInfo';
 import ArticleList from '../components/ArticleList';
 import Button from '../components/Button';
-import { useNavigate } from 'react-router-dom';
 
 const Category = () => {
-    const {name} = useParams();
-    const data = useContext(ArticleStateContext);
-    const nav = useNavigate();
+  const { name } = useParams();
+  const data = useContext(ArticleStateContext);
+  const nav = useNavigate();
 
-    const allowedCategories = ['campus', 'society', 'business', 'culture', 'science', 'archive'];
-    if (!allowedCategories.includes(name.toLowerCase())) {
-        return <Notfound/>
-    }
+  const allowedCategories = ['campus', 'society', 'business', 'culture', 'science', 'archive'];
+  if (!allowedCategories.includes(name.toLowerCase())) {
+    return <Notfound />;
+  }
 
-    return (
-        <div>
-            <CategoryInfo category={name}/>
-            {data
-            .filter((item) => item.category.toLowerCase() === name.toLowerCase())
-            .map((item) => <ArticleList key={item.id} {...item}/>)}
-            <Button 
-            onClick={() => nav(`/new/${name}`)}
-            text={"기사 작성하기"}/>
-        </div>
-    );
+  const filteredArticles = data.filter(
+    (item) => item.category.toLowerCase() === name.toLowerCase()
+  );
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh'
+      }}
+    >
+      <div
+        style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+        <CategoryInfo category={name} />
+        {filteredArticles.map((item) => (
+          <ArticleList key={item.id} {...item} />
+        ))}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          marginBottom: '20px',
+        }}
+      >
+        <Button 
+          onClick={() => nav(`/new/${name}`)} 
+          text={"기사 작성하기"} 
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Category;
