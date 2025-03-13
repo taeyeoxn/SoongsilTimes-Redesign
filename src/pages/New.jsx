@@ -1,6 +1,6 @@
 import Editor from '../components/Editor';
 import { ArticleDispatchContext } from '../App';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { replace, useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const New = () => {
     const {onCreate} = useContext(ArticleDispatchContext);
     const {category} = useParams(); //URL에서 category 값 가져오기
     const nav = useNavigate();
-
+    
     const onSubmit = (input) => {
         onCreate(
             input.createdDate.getTime(), 
