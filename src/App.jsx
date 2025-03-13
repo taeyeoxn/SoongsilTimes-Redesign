@@ -1,5 +1,5 @@
 import './App.css';
-import { useReducer, useRef, createContext } from 'react';
+import { useReducer, useRef, createContext, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Category from './pages/Category';
@@ -11,48 +11,71 @@ import Notfound from './pages/Notfound';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const mockData = [
-  {
-    id: 1,
-    createdDate: new Date().getTime(),
-    category: "campus",
-    image: null,
-    title: "Facing the Climate Crisis: Climateflation",
-    reporter: "Yoo Tae-yeon",
-    content: "Are Soongsilians interested in fashion? ST interviewed Soongsilians who wear clothes that express their individuality to other Soongsilians on campus. Get recommendations through...",
-  },
-  {
-    id: 2,
-    createdDate: new Date().getTime(),
-    category: "society",
-    image: null,
-    title: "2번 기사",
-    reporter: "짱아",
-    content: "2번 기사 내용",
-  },
-]
-
 function reducer(state, action) {
+  let nextState;
+
   switch(action.type) {
+    case 'INIT': 
+      return action.data;
     case 'CREATE':
-      return [action.data,...state]
+      { nextState = [action.data,...state];
+        break;
+      }
     case 'UPDATE':
-      return state.map((item) =>
-        String(item.id) === String(action.data.id) ? action.data : item);
+      { nextState = state.map((item) =>
+        String(item.id) === String(action.data.id) 
+        ? action.data 
+        : item);
+        break;
+      }
     case 'DELETE':
-      return state.filter((item) =>
+      { nextState = state.filter((item) =>
         String(item.id) !== String(action.id));
+        break;
+      }
       default:
         return state;
   }
+  localStorage.setItem("article", JSON.stringify(nextState));
+  return nextState;
 }
 
 export const ArticleStateContext = createContext();
 export const ArticleDispatchContext = createContext();
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, mockData);
-  const idRef = useRef(3);
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, dispatch] = useReducer(reducer, []);
+  const idRef = useRef(0);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("article");
+    if(!storedData){
+      setIsLoading(false);
+      return;
+    }
+
+    const parsedData = JSON.parse(storedData);
+    if(!Array.isArray(parsedData)){
+      setIsLoading(false);
+      return;
+    };
+
+    let maxId = 0;
+    parsedData.forEach((item) => {
+      if(Number(item.id) > maxId){
+        maxId = Number(item.id)
+      }
+    });
+
+    idRef.current = maxId + 1;
+
+    dispatch({
+      type: "INIT",
+      data: parsedData,
+    });
+    setIsLoading(false);
+  }, []);
 
   // 새로운 기사 추가
   const onCreate = (createdDate, category, image, title, reporter, content) => {
@@ -92,6 +115,10 @@ function App() {
       type: "DELETE",
       id,
     });
+  }
+
+  if (isLoading) {
+    return <div>데이터 로딩중입니다...</div>
   }
 
   return (
