@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import Viewer from '../components/Viewer';
 import { useContext } from 'react';
 import useArticle from '../hooks/useArticle';
+import usePageTitle from '../hooks/usePageTitle';
 
 const Article = () => {
     const params = useParams();
@@ -12,6 +13,7 @@ const Article = () => {
     const {onDelete} = useContext(ArticleDispatchContext);
 
     const curArticleItem = useArticle(params.id);
+    usePageTitle(curArticleItem?.title || "로딩 중...");
 
     if(!curArticleItem) {
         return <div>데이터 로딩중..</div>

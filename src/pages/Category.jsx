@@ -5,6 +5,7 @@ import Notfound from './Notfound';
 import CategoryInfo from '../components/CategoryInfo';
 import ArticleList from '../components/ArticleList';
 import Button from '../components/Button';
+import usePageTitle from '../hooks/usePageTitle';
 
 const Category = () => {
   const { name } = useParams();
@@ -12,6 +13,8 @@ const Category = () => {
   const nav = useNavigate();
 
   const allowedCategories = ['campus', 'society', 'business', 'culture', 'science', 'archive'];
+  usePageTitle(`${name.toUpperCase()}`);
+  
   if (!allowedCategories.includes(name.toLowerCase())) {
     return <Notfound />;
   }

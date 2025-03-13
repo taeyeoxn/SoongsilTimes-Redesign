@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import { ArticleStateContext, ArticleDispatchContext } from '../App';
 import { useContext, useEffect, useState } from 'react';
 import useArticle from '../hooks/useArticle';
+import usePageTitle from '../hooks/usePageTitle';
 
 const Edit = () => {
     const params = useParams();
     const nav = useNavigate();
     const {onUpdate} = useContext(ArticleDispatchContext);
+    usePageTitle("기사 수정하기");
 
     const curArticleItem = useArticle(params.id);
 
