@@ -18,11 +18,11 @@
 > **홈**
 <div style="display: flex; justify-content: space-around;">
   <img width="500" alt="image" src="https://github.com/user-attachments/assets/185b9722-473b-4981-afa8-367048ef8e2b">
-  <img width="500" alt="image" src="https://github.com/user-attachments/assets/aeec5207-1bb2-4913-8bff-770628ccb3ff">
+  <img width="500" alt="image" src="https://github.com/user-attachments/assets/46260874-92f3-4aaf-a9af-a94226ba245d">
 </div>
 <div style="display: flex; justify-content: space-around;">
-  <img width="500" alt="image" src="https://github.com/user-attachments/assets/46260874-92f3-4aaf-a9af-a94226ba245d">
-  <img width="500" alt="image" src="https://github.com/user-attachments/assets/55ac1f52-daa5-4665-8b50-27be079e4f05">
+  <img width="500" alt="image" src="https://github.com/user-attachments/assets/60f99f7c-63f5-47b7-a0f1-34a67fe13ee9">
+  <img width="500" alt="image" src="https://github.com/user-attachments/assets/efc8c3e2-3c7b-4344-8eb2-1db1070fdcc5">
 </div>
 
 <br>
@@ -43,8 +43,8 @@
 
 > **기사**
 <div style="display: flex; justify-content: space-around;">
-  <img width="500" alt="image" src="https://github.com/user-attachments/assets/a471e32f-56a4-442b-8524-1379fa90cb3e">
-  <img width="500" alt="image" src="https://github.com/user-attachments/assets/a3a6d861-e8c1-42a0-9ec8-8f0ee63bde3c">
+  <img width="500" alt="image" src="https://github.com/user-attachments/assets/92a06514-d286-49ac-8bae-f9dbda378a67">
+  <img width="500" alt="image" src="https://github.com/user-attachments/assets/1939bf51-dd0e-46b6-a15a-74cc642b2209">
 </div>
 
 <br>
